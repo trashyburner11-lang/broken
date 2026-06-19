@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Arcade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Mini Arcade</h1>
+      <p>Three quick games in one page.</p>
+    </div>
+    <nav class="tabs" aria-label="Game tabs">
+      <button class="tab active" data-game="snake">Snake</button>
+      <button class="tab" data-game="pong">Pong</button>
+      <button class="tab" data-game="memory">Memory</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="snake" class="game-panel active" aria-labelledby="snake-title">
+      <div class="game-header">
+        <div>
+          <h2 id="snake-title">Snake</h2>
+          <p>Use arrow keys or WASD. Eat apples, avoid walls and yourself.</p>
+        </div>
+        <div class="scorebox">Score <strong id="snake-score">0</strong></div>
+      </div>
+      <canvas id="snake-board" width="420" height="420" aria-label="Snake game board"></canvas>
+      <div class="controls">
+        <button id="snake-start">Start</button>
+        <button id="snake-reset">Reset</button>
+      </div>
+    </section>
+
+    <section id="pong" class="game-panel" aria-labelledby="pong-title">
+      <div class="game-header">
+        <div>
+          <h2 id="pong-title">Pong</h2>
+          <p>Move with W/S or arrow keys. First to 7 wins.</p>
+        </div>
+        <div class="scorebox"><strong id="pong-player">0</strong> : <strong id="pong-ai">0</strong></div>
+      </div>
+      <canvas id="pong-board" width="720" height="420" aria-label="Pong game board"></canvas>
+      <div class="controls">
+        <button id="pong-start">Start</button>
+        <button id="pong-reset">Reset</button>
+      </div>
+    </section>
+
+    <section id="memory" class="game-panel" aria-labelledby="memory-title">
+      <div class="game-header">
+        <div>
+          <h2 id="memory-title">Memory Match</h2>
+          <p>Flip two tiles at a time and match all pairs.</p>
+        </div>
+        <div class="scorebox">Moves <strong id="memory-moves">0</strong></div>
+      </div>
+      <div id="memory-board" class="memory-board" aria-label="Memory card board"></div>
+      <div class="controls">
+        <button id="memory-reset">Shuffle</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
